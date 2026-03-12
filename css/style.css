@@ -1,0 +1,16 @@
+/**
+ * @file style.css
+ * @description Main stylesheet entry point, importing modular partials.
+ */
+
+/* Import Base Styles */
+/* @import './base/reset.css'; */
+/* @import './base/typography.css'; */
+
+/* Import Layout Styles */
+/* @import './layout/header.css'; */
+/* @import './layout/footer.css'; */
+
+/* Import Component Styles */
+/* @import './components/hero.css'; */
+/* @import './components/cards.css'; */
