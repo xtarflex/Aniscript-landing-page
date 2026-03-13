@@ -167,10 +167,12 @@
   top: -40px;
   left: -20px;
   right: -20px;
-  height: 160px;
+  height: 320px;
   background: linear-gradient(90deg, #38bdf8, #a78bfa, #3b82f6, #f472b6, #38bdf8);
   background-size: 200% auto;
   filter: blur(40px);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 40%, transparent 100%);
   opacity: 0.15;
   transition: opacity 0.5s ease;
   z-index: -1;
