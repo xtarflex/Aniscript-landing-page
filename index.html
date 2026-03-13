@@ -1,222 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AniScript — The Animation DSL</title>
-  <meta name="description" content="A declarative animation DSL. 53 hardware-accelerated animations. Zero dependencies.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniScript — The Animation DSL</title>
+    <meta name="description"
+        content="A declarative animation DSL. 53 hardware-accelerated animations. Zero dependencies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nlogo">
-    <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="512" height="512" rx="140" fill="#0f172a"/>
-      <defs>
-        <filter id="ng"><feGaussianBlur stdDeviation="10" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
-        <linearGradient id="fg" x1="0%" y1="50%" x2="100%" y2="50%">
-          <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:0"/>
-          <stop offset="60%" style="stop-color:#38bdf8;stop-opacity:0.6"/>
-          <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1"/>
-        </linearGradient>
-      </defs>
-      <g transform="translate(10,0)" filter="url(#ng)">
-        <g transform="translate(0,-20)">
-          <circle cx="95" cy="155" r="18" fill="#38bdf8" opacity="0.4"/>
-          <circle cx="95" cy="205" r="18" fill="#38bdf8" opacity="0.4"/>
-          <path d="M125 170H230L220 125C220 118 228 114 234 118L314 163C320 167 320 173 314 177L234 222C228 226 220 222 220 215L230 190H125V170Z" fill="url(#fg)"/>
-        </g>
-        <g transform="translate(25,20)">
-          <circle cx="115" cy="305" r="18" fill="#38bdf8" opacity="0.4"/>
-          <circle cx="115" cy="355" r="18" fill="#38bdf8" opacity="0.4"/>
-          <path d="M145 320H250L240 275C240 268 248 264 254 268L334 313C340 317 340 323 334 327L254 372C248 376 240 372 240 365L250 340H145V320Z" fill="url(#fg)"/>
-        </g>
-        <path d="M405 85C440 85 462 105 462 150V362C462 407 440 427 405 427" stroke="rgba(248,250,252,0.6)" stroke-width="28" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <span class="nword">AniScript</span>
-  </a>
-  <ul class="nlinks">
-    <li><a href="#how">How it Works</a></li>
-    <li><a href="#playground">Playground</a></li>
-    <li><a href="#gallery">Animations</a></li>
-    <li><a href="#install">Install</a></li>
-    <li><a href="#api">API</a></li>
-    <li><a href="https://github.com/xtarflex/ANISCRIPT-" target="_blank" class="ncta">GitHub ↗</a></li>
-  </ul>
-</nav>
+    <!-- NAV -->
+    <nav>
+        <a href="#hero" class="nlogo">
+            <svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="512" height="512" rx="140" fill="#0f172a" />
+                <defs>
+                    <filter id="ng">
+                        <feGaussianBlur stdDeviation="10" result="b" />
+                        <feComposite in="SourceGraphic" in2="b" operator="over" />
+                    </filter>
+                    <linearGradient id="fg" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:0" />
+                        <stop offset="60%" style="stop-color:#38bdf8;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <g transform="translate(10,0)" filter="url(#ng)">
+                    <g transform="translate(0,-20)">
+                        <circle cx="95" cy="155" r="18" fill="#38bdf8" opacity="0.4" />
+                        <circle cx="95" cy="205" r="18" fill="#38bdf8" opacity="0.4" />
+                        <path
+                            d="M125 170H230L220 125C220 118 228 114 234 118L314 163C320 167 320 173 314 177L234 222C228 226 220 222 220 215L230 190H125V170Z"
+                            fill="url(#fg)" />
+                    </g>
+                    <g transform="translate(25,20)">
+                        <circle cx="115" cy="305" r="18" fill="#38bdf8" opacity="0.4" />
+                        <circle cx="115" cy="355" r="18" fill="#38bdf8" opacity="0.4" />
+                        <path
+                            d="M145 320H250L240 275C240 268 248 264 254 268L334 313C340 317 340 323 334 327L254 372C248 376 240 372 240 365L250 340H145V320Z"
+                            fill="url(#fg)" />
+                    </g>
+                    <path d="M405 85C440 85 462 105 462 150V362C462 407 440 427 405 427" stroke="rgba(248,250,252,0.6)"
+                        stroke-width="28" stroke-linecap="round" />
+                </g>
+            </svg>
+            <span class="nword">AniScript</span>
+        </a>
+        <ul class="nlinks">
+            <li><a href="#how">How it Works</a></li>
+            <li><a href="#playground">Playground</a></li>
+            <li><a href="#gallery">Animations</a></li>
+            <li><a href="#install">Install</a></li>
+            <li><a href="#api">API</a></li>
+            <li><a href="https://github.com/xtarflex/ANISCRIPT-" target="_blank" class="ncta">GitHub ↗</a></li>
+        </ul>
+    </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hglow"></div>
-  <div class="hgrid"></div>
-  <div class="hbadge"><span class="bdot"></span>v1.1.1 — Now on npm</div>
-  <h1 class="htitle">
-    <span class="l1">Animate anything.</span>
-    <span class="l2">Write almost nothing.</span>
-  </h1>
-  <p class="hsub">A declarative animation DSL that compiles to HTML. 53 hardware-accelerated animations. Zero dependencies. Built for the modern web.</p>
-  <div class="hbtns">
-    <a href="#playground" class="bp">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-      Try the Playground
-    </a>
-    <a href="#install" class="bs">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Install
-    </a>
-  </div>
-  <div class="hdemo">
-    <div class="dwin">
-      <div class="dtop">
-        <span class="dd r"></span><span class="dd a"></span><span class="dd g"></span>
-        <span class="dfn">animation.ani</span>
-      </div>
-      <div class="dbody">
-        <div><span class="op">::</span> <span class="an">fade-down</span> <span class="pp">|</span> <span class="dl">@100ms</span> <span class="pp">|</span> <span class="dr">dur:0.8s</span> <span class="op">::</span> <span class="br">{</span></div>
-        <div>&nbsp;&nbsp;<span class="tx">&lt;h1&gt;Experience Motion&lt;/h1&gt;</span></div>
-        <div><span class="br">}</span></div>
-        <div>&nbsp;</div>
-        <div><span class="sg">[[ stagger: 150ms ]]</span></div>
-        <div>&nbsp;&nbsp;<span class="op">::</span> <span class="an">zoom-in-sm</span> <span class="op">::</span> <span class="br">{</span> <span class="tx">&lt;div class="card"&gt;Feature A&lt;/div&gt;</span> <span class="br">}</span></div>
-        <div>&nbsp;&nbsp;<span class="op">::</span> <span class="an">zoom-in-sm</span> <span class="op">::</span> <span class="br">{</span> <span class="tx">&lt;div class="card"&gt;Feature B&lt;/div&gt;</span> <span class="br">}</span></div>
-        <div>&nbsp;&nbsp;<span class="op">::</span> <span class="an">zoom-in-sm</span> <span class="op">::</span> <span class="br">{</span> <span class="tx">&lt;div class="card"&gt;Feature C&lt;/div&gt;</span> <span class="br">}</span></div>
-        <div><span class="sg">[[/]]</span></div>
-        <div>&nbsp;</div>
-        <div><span class="cm">// Compiles to semantic HTML with data-ani-* attributes</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="sstrip">
-  <div class="sitem"><div class="snum">53</div><div class="slbl">Animations</div></div>
-  <div class="sitem"><div class="snum">0</div><div class="slbl">Dependencies</div></div>
-  <div class="sitem"><div class="snum">100%</div><div class="slbl">GPU Accelerated</div></div>
-  <div class="sitem"><div class="snum">~4kb</div><div class="slbl">JS Runtime</div></div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <div class="si">
-    <div class="stag">// how it works</div>
-    <h2 class="stitle">Three steps.<br>One smooth result.</h2>
-    <p class="ssub">AniScript splits the problem into three clean layers — you only touch the first one.</p>
-    <div class="steps">
-      <div class="step"><div class="sn">01</div><div class="st">Write DSL</div><div class="sd">Describe your animation in a concise, readable syntax. No CSS classes to memorize, no keyframes to write.</div><div class="sc">:: fade-up | @200ms :: {<br>&nbsp;&nbsp;Your content here<br>}</div></div>
-      <div class="step"><div class="sn">02</div><div class="st">Compile to HTML</div><div class="sd">The compiler transforms your DSL into semantic HTML with data attributes. Works at build time or runtime.</div><div class="sc">&lt;div<br>&nbsp;&nbsp;data-ani="fade-up"<br>&nbsp;&nbsp;data-ani-delay="200ms"<br>&gt;...&lt;/div&gt;</div></div>
-      <div class="step"><div class="sn">03</div><div class="st">Runtime Triggers</div><div class="sd">The IntersectionObserver watches each element and fires the CSS animation the moment it enters the viewport.</div><div class="sc">init({ threshold: 0.1 });<br><br>// Fires as user scrolls</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PLAYGROUND -->
-<section id="playground">
-  <div class="si">
-    <div class="stag">// interactive</div>
-    <h2 class="stitle">Live Playground.</h2>
-    <p class="ssub">Type AniScript DSL on the left, see the live animation instantly on the right.</p>
-    <div class="pgwrap">
-      <div class="pgtop">
-        <div class="pgdots"><div class="pgdot r"></div><div class="pgdot a"></div><div class="pgdot g"></div></div>
-        <div class="pgtabs">
-          <button class="pgtab active">Hero</button>
-          <button class="pgtab">Stagger</button>
-          <button class="pgtab">Mixed</button>
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hglow"></div>
+        <div class="hgrid"></div>
+        <div class="hbadge"><span class="bdot"></span>v1.1.3 — Now on npm</div>
+        <h1 class="htitle">
+            <span class="l1">Animate anything.</span>
+            <span class="l2">Write almost nothing.</span>
+        </h1>
+        <p class="hsub">A declarative animation DSL that compiles to HTML. 53 hardware-accelerated animations. Zero
+            dependencies. Built for the modern web.</p>
+        <div class="hbtns">
+            <a href="#playground" class="bp">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                Try the Playground
+            </a>
+            <a href="#install" class="bs">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Install
+            </a>
         </div>
-        <button class="pgrun">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Run
-        </button>
-      </div>
-      <div class="pgbody">
-        <div class="pgpane"><div class="pglbl">AniScript DSL</div><textarea class="pged" id="pgi" spellcheck="false"></textarea></div>
-        <div class="pgpane"><div class="pglbl">Live Preview</div><iframe id="pgp" class="pgprev" frameborder="0"></iframe></div>
-      </div>
+        <div class="hdemo">
+            <div class="dwin">
+                <div class="dtop">
+                    <span class="dd r"></span><span class="dd a"></span><span class="dd g"></span>
+                    <span class="dfn">animation.ani</span>
+                </div>
+                <div class="dbody">
+                    <div><span class="op">::</span> <span class="an">fade-down</span> <span class="pp">|</span> <span
+                            class="dl">@100ms</span> <span class="pp">|</span> <span class="dr">dur:0.8s</span> <span
+                            class="op">::</span> <span class="br">{</span></div>
+                    <div>&nbsp;&nbsp;<span class="tx">&lt;h1&gt;Experience Motion&lt;/h1&gt;</span></div>
+                    <div><span class="br">}</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="sg">[[ stagger: 150ms ]]</span></div>
+                    <div>&nbsp;&nbsp;<span class="op">::</span> <span class="an">zoom-in-sm</span> <span
+                            class="op">::</span> <span class="br">{</span> <span class="tx">&lt;div
+                            class="card"&gt;Feature A&lt;/div&gt;</span> <span class="br">}</span></div>
+                    <div>&nbsp;&nbsp;<span class="op">::</span> <span class="an">zoom-in-sm</span> <span
+                            class="op">::</span> <span class="br">{</span> <span class="tx">&lt;div
+                            class="card"&gt;Feature B&lt;/div&gt;</span> <span class="br">}</span></div>
+                    <div>&nbsp;&nbsp;<span class="op">::</span> <span class="an">zoom-in-sm</span> <span
+                            class="op">::</span> <span class="br">{</span> <span class="tx">&lt;div
+                            class="card"&gt;Feature C&lt;/div&gt;</span> <span class="br">}</span></div>
+                    <div><span class="sg">[[/]]</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="cm">// Compiles to semantic HTML with data-ani-* attributes</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="sstrip">
+        <div class="sitem">
+            <div class="snum">53</div>
+            <div class="slbl">Animations</div>
+        </div>
+        <div class="sitem">
+            <div class="snum">0</div>
+            <div class="slbl">Dependencies</div>
+        </div>
+        <div class="sitem">
+            <div class="snum">100%</div>
+            <div class="slbl">GPU Accelerated</div>
+        </div>
+        <div class="sitem">
+            <div class="snum">~4kb</div>
+            <div class="slbl">JS Runtime</div>
+        </div>
     </div>
-  </div>
-</section>
 
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="si">
-    <div class="stag">// 53 animations</div>
-    <h2 class="stitle">Every animation.<br>Ready to use.</h2>
-    <p class="ssub">Click any card to preview it. All GPU-accelerated, all accessible.</p>
-    <div class="gfilters">
-      <button class="gfbtn active" data-filter="all">All</button>
-      <button class="gfbtn" data-filter="fade">Fades</button>
-      <button class="gfbtn" data-filter="zoom">Zooms</button>
-      <button class="gfbtn" data-filter="slide">Slides</button>
-      <button class="gfbtn" data-filter="bounce">Bounces</button>
-      <button class="gfbtn" data-filter="blur">Blur</button>
-      <button class="gfbtn" data-filter="attention">Attention</button>
-      <button class="gfbtn" data-filter="flip">Flips</button>
-    </div>
-    <div class="ggrid" id="ggrid"></div>
-  </div>
-</section>
+    <!-- HOW IT WORKS -->
+    <section id="how">
+        <div class="si">
+            <div class="stag">// how it works</div>
+            <h2 class="stitle">Three steps.<br>One smooth result.</h2>
+            <p class="ssub">AniScript splits the problem into three clean layers — you only touch the first one.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="sn">01</div>
+                    <div class="st">Write DSL</div>
+                    <div class="sd">Describe your animation in a concise, readable syntax. No CSS classes to memorize,
+                        no keyframes to write.</div>
+                    <div class="sc">:: fade-up | @200ms :: {<br>&nbsp;&nbsp;Your content here<br>}</div>
+                </div>
+                <div class="step">
+                    <div class="sn">02</div>
+                    <div class="st">Compile to HTML</div>
+                    <div class="sd">The compiler transforms your DSL into semantic HTML with data attributes. Works at
+                        build time or runtime.</div>
+                    <div class="sc">
+                        &lt;div<br>&nbsp;&nbsp;data-ani="fade-up"<br>&nbsp;&nbsp;data-ani-delay="200ms"<br>&gt;...&lt;/div&gt;
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="sn">03</div>
+                    <div class="st">Runtime Triggers</div>
+                    <div class="sd">The IntersectionObserver watches each element and fires the CSS animation the moment
+                        it enters the viewport.</div>
+                    <div class="sc">init({ threshold: 0.1 });<br><br>// Fires as user scrolls</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- INSTALL -->
-<section id="install">
-  <div class="si">
-    <div class="stag">// get started</div>
-    <h2 class="stitle">Up in 60 seconds.</h2>
-    <p class="ssub">Two paths — pick what fits your project.</p>
-    <div class="igrid">
-      <div class="icard">
-        <div class="ictitle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>NPM / Build Tool</div>
-        <div class="icsub">For React, Vue, Svelte, Next.js, or any modern build pipeline.</div>
-        <div class="cblock"><button class="cpybtn">copy</button><span class="cc"># 1. Install</span><br>npm install aniscript<br><br><span class="ci">import</span> { compile, init } <span class="ci">from</span> <span class="cs">'aniscript'</span>;<br><span class="ci">import</span> <span class="cs">'aniscript/dist/aniscript.css'</span>;<br><br><span class="cc">// 2. Compile &amp; inject</span><br><span class="ck">const</span> html = <span class="cf">compile</span>(<span class="cs">':: fade-up :: { Hello }'</span>);<br>document.querySelector(<span class="cs">'#app'</span>).innerHTML = html;<br><br><span class="cc">// 3. Start the observer</span><br><span class="cf">init</span>();</div>
-      </div>
-      <div class="icard">
-        <div class="ictitle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>CDN / Static Site</div>
-        <div class="icsub">Drop into any HTML file. No build step required.</div>
-        <div class="cblock"><button class="cpybtn">copy</button><span class="cc">&lt;!-- In &lt;head&gt; --&gt;</span><br>&lt;<span class="cf">link</span> rel=<span class="cs">"stylesheet"</span><br>&nbsp;href=<span class="cs">"https://unpkg.com/aniscript/dist/aniscript.css"</span>&gt;<br><br><span class="cc">&lt;!-- Before &lt;/body&gt; --&gt;</span><br>&lt;<span class="cf">script</span> type=<span class="cs">"module"</span>&gt;<br>&nbsp;<span class="ci">import</span> { compile, init }<br>&nbsp;&nbsp;<span class="ci">from</span> <span class="cs">'https://unpkg.com/aniscript/src/index.js'</span>;<br>&nbsp;document.body.innerHTML +=<br>&nbsp;&nbsp;<span class="cf">compile</span>(<span class="cs">':: bounce-in :: { Hello! }'</span>);<br>&nbsp;<span class="cf">init</span>();<br>&lt;/<span class="cf">script</span>&gt;</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- PLAYGROUND -->
+    <section id="playground">
+        <div class="si">
+            <div class="stag">// interactive</div>
+            <h2 class="stitle">Live Playground.</h2>
+            <p class="ssub">Type AniScript DSL on the left, see the live animation instantly on the right.</p>
+            <div class="pgwrap">
+                <div class="pgtop">
+                    <div class="pgdots">
+                        <div class="pgdot r"></div>
+                        <div class="pgdot a"></div>
+                        <div class="pgdot g"></div>
+                    </div>
+                    <div class="pgtabs">
+                        <button class="pgtab active">Hero</button>
+                        <button class="pgtab">Stagger</button>
+                        <button class="pgtab">Mixed</button>
+                    </div>
+                    <button class="pgrun">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg> Run
+                    </button>
+                </div>
+                <div class="pgbody">
+                    <div class="pgpane">
+                        <div class="pglbl">AniScript DSL</div><textarea class="pged" id="pgi"
+                            spellcheck="false"></textarea>
+                    </div>
+                    <div class="pgpane">
+                        <div class="pglbl">Live Preview</div><iframe id="pgp" class="pgprev" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- API -->
-<section id="api">
-  <div class="si">
-    <div class="stag">// api reference</div>
-    <h2 class="stitle">Simple API.<br>Powerful results.</h2>
-    <p class="ssub">The full DSL parameter reference at a glance.</p>
-    <table class="atable">
-      <thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr><td><code>animation-name</code></td><td class="ttype">string</td><td class="tdef">required</td><td class="tdesc">Any of the 53 built-in names. e.g. fade-up, zoom-in, bounce-left, shake-h</td></tr>
-        <tr><td><code>tag</code></td><td class="ttype">div | span</td><td class="tdef">"div"</td><td class="tdesc">The HTML wrapper element. Use span for inline content.</td></tr>
-        <tr><td><code>@delay</code></td><td class="ttype">time</td><td class="tdef">"0ms"</td><td class="tdesc">Delay before animation starts. e.g. @200ms, @0.5s</td></tr>
-        <tr><td><code>dur:duration</code></td><td class="ttype">time</td><td class="tdef">"1s"</td><td class="tdesc">Total animation duration. e.g. dur:800ms, dur:1.5s</td></tr>
-        <tr><td><code>[[ stagger: t ]]</code></td><td class="ttype">time</td><td class="tdef">—</td><td class="tdesc">Wraps children and applies cumulative delays. Close with [[/]]</td></tr>
-        <tr><td><code>init(config)</code></td><td class="ttype">object</td><td class="tdef">{}</td><td class="tdesc">threshold (0–1) and rootMargin for the IntersectionObserver.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="si">
+            <div class="stag">// 53 animations</div>
+            <h2 class="stitle">Every animation.<br>Ready to use.</h2>
+            <p class="ssub">Click any card to preview it. All GPU-accelerated, all accessible.</p>
+            <div class="gfilters">
+                <button class="gfbtn active" data-filter="all">All</button>
+                <button class="gfbtn" data-filter="fade">Fades</button>
+                <button class="gfbtn" data-filter="zoom">Zooms</button>
+                <button class="gfbtn" data-filter="slide">Slides</button>
+                <button class="gfbtn" data-filter="bounce">Bounces</button>
+                <button class="gfbtn" data-filter="blur">Blur</button>
+                <button class="gfbtn" data-filter="attention">Attention</button>
+                <button class="gfbtn" data-filter="flip">Flips</button>
+            </div>
+            <div class="ggrid" id="ggrid"></div>
+        </div>
+    </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="fi">
-    <div class="flogo">AniScript</div>
-    <ul class="flinks">
-      <li><a href="https://github.com/xtarflex/ANISCRIPT-" target="_blank">GitHub</a></li>
-      <li><a href="https://npmjs.com/package/aniscript" target="_blank">npm</a></li>
-      <li><a href="https://github.com/xtarflex/ANISCRIPT-/blob/master/docs/GETTING_STARTED.md" target="_blank">Docs</a></li>
-      <li><a href="https://github.com/xtarflex/ANISCRIPT-/blob/master/docs/API_REFERENCE.md" target="_blank">API Ref</a></li>
-    </ul>
-    <div class="fcopy">Built by xtarflex · ISC License</div>
-  </div>
-</footer>
+    <!-- INSTALL -->
+    <section id="install">
+        <div class="si">
+            <div class="stag">// get started</div>
+            <h2 class="stitle">Up in 60 seconds.</h2>
+            <p class="ssub">Two paths — pick what fits your project.</p>
+            <div class="igrid">
+                <div class="icard">
+                    <div class="ictitle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>NPM / Build Tool</div>
+                    <div class="icsub">For React, Vue, Svelte, Next.js, or any modern build pipeline.</div>
+                    <div class="cblock"><button class="cpybtn">copy</button><span class="cc"># 1. Install</span><br>npm
+                        install aniscript<br><br><span class="ci">import</span> { compile, init } <span
+                            class="ci">from</span> <span class="cs">'aniscript'</span>;<br><span
+                            class="ci">import</span> <span
+                            class="cs">'aniscript/dist/aniscript.css'</span>;<br><br><span class="cc">// 2. Compile
+                            &amp; inject</span><br><span class="ck">const</span> html = <span
+                            class="cf">compile</span>(<span class="cs">':: fade-up :: { Hello
+                            }'</span>);<br>document.querySelector(<span class="cs">'#app'</span>).innerHTML =
+                        html;<br><br><span class="cc">// 3. Start the observer</span><br><span class="cf">init</span>();
+                    </div>
+                </div>
+                <div class="icard">
+                    <div class="ictitle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
+                            stroke-width="2">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                        </svg>CDN / Static Site</div>
+                    <div class="icsub">Drop into any HTML file. No build step required.</div>
+                    <div class="cblock"><button class="cpybtn">copy</button><span class="cc">&lt;!-- In &lt;head&gt;
+                            --&gt;</span><br>&lt;<span class="cf">link</span> rel=<span
+                            class="cs">"stylesheet"</span><br>&nbsp;href=<span
+                            class="cs">"https://unpkg.com/aniscript/dist/aniscript.css"</span>&gt;<br><br><span
+                            class="cc">&lt;!-- Before &lt;/body&gt; --&gt;</span><br>&lt;<span class="cf">script</span>
+                        type=<span class="cs">"module"</span>&gt;<br>&nbsp;<span class="ci">import</span> { compile,
+                        init }<br>&nbsp;&nbsp;<span class="ci">from</span> <span
+                            class="cs">'https://unpkg.com/aniscript/src/index.js'</span>;<br>&nbsp;document.body.innerHTML
+                        +=<br>&nbsp;&nbsp;<span class="cf">compile</span>(<span class="cs">':: bounce-in :: { Hello!
+                            }'</span>);<br>&nbsp;<span class="cf">init</span>();<br>&lt;/<span
+                            class="cf">script</span>&gt;</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script type="module" src="./js/main.js"></script>
+    <!-- API -->
+    <section id="api">
+        <div class="si">
+            <div class="stag">// api reference</div>
+            <h2 class="stitle">Simple API.<br>Powerful results.</h2>
+            <p class="ssub">The full DSL parameter reference at a glance.</p>
+            <table class="atable">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>animation-name</code></td>
+                        <td class="ttype">string</td>
+                        <td class="tdef">required</td>
+                        <td class="tdesc">Any of the 53 built-in names. e.g. fade-up, zoom-in, bounce-left, shake-h</td>
+                    </tr>
+                    <tr>
+                        <td><code>tag</code></td>
+                        <td class="ttype">div | span</td>
+                        <td class="tdef">"div"</td>
+                        <td class="tdesc">The HTML wrapper element. Use span for inline content.</td>
+                    </tr>
+                    <tr>
+                        <td><code>@delay</code></td>
+                        <td class="ttype">time</td>
+                        <td class="tdef">"0ms"</td>
+                        <td class="tdesc">Delay before animation starts. e.g. @200ms, @0.5s</td>
+                    </tr>
+                    <tr>
+                        <td><code>dur:duration</code></td>
+                        <td class="ttype">time</td>
+                        <td class="tdef">"1s"</td>
+                        <td class="tdesc">Total animation duration. e.g. dur:800ms, dur:1.5s</td>
+                    </tr>
+                    <tr>
+                        <td><code>[[ stagger: t ]]</code></td>
+                        <td class="ttype">time</td>
+                        <td class="tdef">—</td>
+                        <td class="tdesc">Wraps children and applies cumulative delays. Close with [[/]]</td>
+                    </tr>
+                    <tr>
+                        <td><code>init(config)</code></td>
+                        <td class="ttype">object</td>
+                        <td class="tdef">{}</td>
+                        <td class="tdesc">threshold (0–1) and rootMargin for the IntersectionObserver.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="fi">
+            <div class="flogo">AniScript</div>
+            <ul class="flinks">
+                <li><a href="https://github.com/xtarflex/ANISCRIPT-" target="_blank">GitHub</a></li>
+                <li><a href="https://npmjs.com/package/aniscript" target="_blank">npm</a></li>
+                <li><a href="https://github.com/xtarflex/ANISCRIPT-/blob/master/docs/GETTING_STARTED.md"
+                        target="_blank">Docs</a></li>
+                <li><a href="https://github.com/xtarflex/ANISCRIPT-/blob/master/docs/API_REFERENCE.md"
+                        target="_blank">API Ref</a></li>
+            </ul>
+            <div class="fcopy">Built by xtarflex · ISC License</div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
+
 </html>

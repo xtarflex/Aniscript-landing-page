@@ -7,7 +7,7 @@ import { compile } from 'aniscript';
 const exs = {
   hero: `:: fade-down | @100ms | dur:0.8s :: {\n  <h2>Experience Motion</h2>\n}\n:: fade-up | @400ms :: {\n  <p>A declarative DSL for modern web animations.</p>\n}\n:: zoom-in-sm | @700ms :: {\n  <button>Get Started Free</button>\n}`,
   stagger: `[[ stagger: 150ms ]]\n  :: zoom-in-sm :: { <div class="card"><h3>Card One</h3><p>Stagger is automatic.</p></div> }\n  :: zoom-in-sm :: { <div class="card"><h3>Card Two</h3><p>Each child is offset.</p></div> }\n  :: zoom-in-sm :: { <div class="card"><h3>Card Three</h3><p>No math required.</p></div> }\n[[/]]`,
-  mixed: `:: blur-in | @0ms | dur:1s :: {\n  <div class="tag">New Release</div>\n}\n:: fade-down | @300ms :: {\n  <h2>AniScript v1.1.1</h2>\n}\n:: fade-up | @550ms :: {\n  <p>The animation DSL is now on npm.</p>\n}\n[[ stagger: 130ms ]]\n  :: fade-left :: { <div class="card"><h3>Compiler</h3><p>DSL to HTML</p></div> }\n  :: fade-left :: { <div class="card"><h3>Runtime</h3><p>Observer-based triggers</p></div> }\n[[/]]`
+  mixed: `:: blur-in | @0ms | dur:1s :: {\n  <div class="tag">New Release</div>\n}\n:: fade-down | @300ms :: {\n  <h2>AniScript v1.1.3</h2>\n}\n:: fade-up | @550ms :: {\n  <p>The animation DSL is now on npm.</p>\n}\n[[ stagger: 130ms ]]\n  :: fade-left :: { <div class="card"><h3>Compiler</h3><p>DSL to HTML</p></div> }\n  :: fade-left :: { <div class="card"><h3>Runtime</h3><p>Observer-based triggers</p></div> }\n[[/]]`
 };
 
 /**
@@ -15,7 +15,7 @@ const exs = {
  * @returns {string} The CSS string of keyframes.
  */
 function allKeyframes() {
-    return `
+  return `
     @keyframes ani-fade-in{from{opacity:0}to{opacity:1}}
     @keyframes ani-fade-up{from{opacity:0;transform:translate3d(0,40px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
     @keyframes ani-fade-up-sm{from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
@@ -77,7 +77,7 @@ function allKeyframes() {
  * @returns {string} The CSS selectors string.
  */
 function allSelectors() {
-    return `
+  return `
     [data-ani="fade-in"].ani-running{animation-name:ani-fade-in}
     [data-ani="fade-up"].ani-running{animation-name:ani-fade-up}
     [data-ani="fade-up-sm"].ani-running{animation-name:ani-fade-up-sm}
@@ -140,12 +140,12 @@ function allSelectors() {
  */
 export function loadEx(k) {
   const pgi = document.getElementById('pgi');
-  if(pgi) {
-      pgi.value = exs[k];
+  if (pgi) {
+    pgi.value = exs[k];
   }
 
   document.querySelectorAll('.pgtab').forEach((t, i) => {
-    t.classList.toggle('active', ['hero','stagger','mixed'][i] === k);
+    t.classList.toggle('active', ['hero', 'stagger', 'mixed'][i] === k);
   });
 
   runPG();
@@ -157,7 +157,7 @@ export function loadEx(k) {
 export function runPG() {
   const iframe = document.getElementById('pgp');
   const pgi = document.getElementById('pgi');
-  if(!iframe || !pgi) return;
+  if (!iframe || !pgi) return;
 
   const inputVal = pgi.value;
   // Use the installed aniscript package to compile
@@ -189,28 +189,28 @@ export function runPG() {
   const w = iframe.contentWindow;
   let obs = new w.IntersectionObserver((entries, o) => {
     entries.forEach(e => {
-      if(e.isIntersecting) {
+      if (e.isIntersecting) {
         e.target.classList.remove('ani-paused');
         e.target.classList.add('ani-running');
         o.unobserve(e.target);
       }
     });
-  }, {threshold: .05});
+  }, { threshold: .05 });
 
   w.document.querySelectorAll('[data-ani-stagger]').forEach(c => {
     const ms = parseFloat(c.dataset.aniStagger) || 100;
     c.querySelectorAll('[data-ani]').forEach((ch, i) => {
       const base = parseFloat(ch.dataset.aniDelay) || 0;
       ch.style.animationDelay = `${base + i * ms}ms`;
-      if(ch.dataset.aniDuration) ch.style.animationDuration = ch.dataset.aniDuration;
+      if (ch.dataset.aniDuration) ch.style.animationDuration = ch.dataset.aniDuration;
       ch.classList.add('ani-paused');
     });
   });
 
   w.document.querySelectorAll('[data-ani]').forEach(el => {
-    if(!el.classList.contains('ani-paused')){
-      if(el.dataset.aniDelay) el.style.animationDelay = el.dataset.aniDelay;
-      if(el.dataset.aniDuration) el.style.animationDuration = el.dataset.aniDuration;
+    if (!el.classList.contains('ani-paused')) {
+      if (el.dataset.aniDelay) el.style.animationDelay = el.dataset.aniDelay;
+      if (el.dataset.aniDuration) el.style.animationDuration = el.dataset.aniDuration;
       el.classList.add('ani-paused');
     }
     obs.observe(el);
@@ -221,24 +221,24 @@ export function runPG() {
  * Initializes the playground component, adding necessary event listeners.
  */
 export function initPlayground() {
-    const pgrun = document.querySelector('.pgrun');
-    if(pgrun) {
-        pgrun.addEventListener('click', runPG);
-    }
-    const pgi = document.getElementById('pgi');
-    if(pgi) {
-        pgi.addEventListener('input', runPG);
-    }
+  const pgrun = document.querySelector('.pgrun');
+  if (pgrun) {
+    pgrun.addEventListener('click', runPG);
+  }
+  const pgi = document.getElementById('pgi');
+  if (pgi) {
+    pgi.addEventListener('input', runPG);
+  }
 
-    // Attach event listeners to tabs
-    document.querySelectorAll('.pgtab').forEach(tab => {
-        tab.addEventListener('click', function() {
-            let k = 'hero';
-            if(this.textContent === 'Stagger') k = 'stagger';
-            if(this.textContent === 'Mixed') k = 'mixed';
-            loadEx(k);
-        });
+  // Attach event listeners to tabs
+  document.querySelectorAll('.pgtab').forEach(tab => {
+    tab.addEventListener('click', function () {
+      let k = 'hero';
+      if (this.textContent === 'Stagger') k = 'stagger';
+      if (this.textContent === 'Mixed') k = 'mixed';
+      loadEx(k);
     });
+  });
 
-    loadEx('hero');
+  loadEx('hero');
 }
