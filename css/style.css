@@ -24,3 +24,9 @@
 @import './components/gallery.css';
 @import './components/install.css';
 @import './components/api.css';
+
+/* Fix Animation FOUC (Flash of Unstyled Content)
+   Hide all animated elements initially before JS observer processes them */
+[data-ani]:not(.ani-running) {
+    opacity: 0;
+}
