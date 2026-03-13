@@ -31,9 +31,24 @@ function initializeApp() {
     initGallery();
     initPlayground();
 
+    // Smooth scroll for internal links without changing URL hash
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                // Clean up URL if there is an existing hash
+                history.replaceState('', document.title, window.location.pathname + window.location.search);
+            }
+        });
+    });
+
     // Attach cpyCode listeners to copy buttons
     document.querySelectorAll('.cpybtn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             cpyCode(this);
         });
     });
