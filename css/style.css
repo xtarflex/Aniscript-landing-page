@@ -3,14 +3,24 @@
  * @description Main stylesheet entry point, importing modular partials.
  */
 
-/* Import Base Styles */
-/* @import './base/reset.css'; */
-/* @import './base/typography.css'; */
+/* AniScript CSS */
+@import '../node_modules/aniscript/dist/aniscript.css';
 
-/* Import Layout Styles */
-/* @import './layout/header.css'; */
-/* @import './layout/footer.css'; */
+/* Base Styles */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
 
-/* Import Component Styles */
-/* @import './components/hero.css'; */
-/* @import './components/cards.css'; */
+/* Layout Styles */
+@import './layout/nav.css';
+@import './layout/grid.css';
+@import './layout/footer.css';
+
+/* Component Styles */
+@import './components/hero.css';
+@import './components/stats.css';
+@import './components/how.css';
+@import './components/playground.css';
+@import './components/gallery.css';
+@import './components/install.css';
+@import './components/api.css';
