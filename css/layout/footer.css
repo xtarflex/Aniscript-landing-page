@@ -1,0 +1,12 @@
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 48px 24px; }
+.fi { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.flogo { font-family: var(--fd); font-weight: 800; font-size: 1rem; color: var(--muted); }
+.flinks { display: flex; gap: 24px; list-style: none; }
+.flinks a { font-size: .82rem; color: var(--dim); text-decoration: none; transition: color .2s; }
+.flinks a:hover { color: var(--text); }
+.fcopy { font-size: .78rem; color: var(--dim); }
+
+@media(max-width:768px){
+  .fi { flex-direction: column; text-align: center; }
+}

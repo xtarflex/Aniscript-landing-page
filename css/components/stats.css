@@ -1,0 +1,16 @@
+/* STATS */
+.sstrip {
+  display: flex; justify-content: center; max-width: 800px; margin: 0 auto 120px;
+  position: relative; z-index: 1; animation: fup .8s .5s ease both;
+}
+.sitem { flex: 1; text-align: center; padding: 24px 16px; border: 1px solid var(--border); background: var(--surface); }
+.sitem:first-child { border-radius: 10px 0 0 10px; }
+.sitem:last-child { border-radius: 0 10px 10px 0; }
+.sitem + .sitem { border-left: none; }
+.snum { font-family: var(--fd); font-weight: 800; font-size: 2rem; color: var(--sky); line-height: 1; margin-bottom: 4px; }
+.slbl { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+
+@media(max-width:768px){
+  .sstrip { flex-direction: column; gap: 8px; padding: 0 24px; }
+  .sitem { border-radius: 8px!important; border: 1px solid var(--border)!important; }
+}

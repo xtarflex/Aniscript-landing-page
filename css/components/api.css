@@ -1,0 +1,13 @@
+/* API */
+#api { background: var(--bg2); }
+.atable { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: .85rem; }
+.atable th {
+  text-align: left; font-family: var(--fm); font-size: .7rem; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--muted); padding: 10px 16px; border-bottom: 1px solid var(--border2);
+}
+.atable td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.atable tr:hover td { background: rgba(255,255,255,.02); }
+.atable code { font-family: var(--fm); font-size: .8rem; color: var(--sky); background: rgba(56,189,248,.08); padding: 2px 8px; border-radius: 4px; }
+.ttype { font-family: var(--fm); font-size: .75rem; color: #a78bfa; }
+.tdef { font-family: var(--fm); font-size: .75rem; color: #34d399; }
+.tdesc { color: var(--muted); font-size: .82rem; }
