@@ -123,20 +123,20 @@
     </section>
 
     <!-- STATS -->
-    <div class="sstrip" data-ani-stagger="100">
-        <div class="sitem" data-ani="fade-up">
+    <div class="sstrip">
+        <div class="sitem">
             <div class="snum">53</div>
             <div class="slbl">Animations</div>
         </div>
-        <div class="sitem" data-ani="fade-up">
+        <div class="sitem">
             <div class="snum">0</div>
             <div class="slbl">Dependencies</div>
         </div>
-        <div class="sitem" data-ani="fade-up">
+        <div class="sitem">
             <div class="snum">100%</div>
             <div class="slbl">GPU Accelerated</div>
         </div>
-        <div class="sitem" data-ani="fade-up">
+        <div class="sitem">
             <div class="snum">~4kb</div>
             <div class="slbl">JS Runtime</div>
         </div>
@@ -145,18 +145,18 @@
     <!-- HOW IT WORKS -->
     <section id="how">
         <div class="si">
-            <div class="stag" data-ani="fade-down">// how it works</div>
-            <h2 class="stitle" data-ani="fade-up" data-ani-delay="100ms">Three steps.<br>One smooth result.</h2>
-            <p class="ssub" data-ani="fade-up" data-ani-delay="200ms">AniScript splits the problem into three clean layers — you only touch the first one.</p>
-            <div class="steps" data-ani-stagger="150">
-                <div class="step" data-ani="fade-left">
+            <div class="stag">// how it works</div>
+            <h2 class="stitle">Three steps.<br>One smooth result.</h2>
+            <p class="ssub">AniScript splits the problem into three clean layers — you only touch the first one.</p>
+            <div class="steps">
+                <div class="step">
                     <div class="sn">01</div>
                     <div class="st">Write DSL</div>
                     <div class="sd">Describe your animation in a concise, readable syntax. No CSS classes to memorize,
                         no keyframes to write.</div>
                     <div class="sc">:: fade-up | @200ms :: {<br>&nbsp;&nbsp;Your content here<br>}</div>
                 </div>
-                <div class="step" data-ani="fade-left">
+                <div class="step">
                     <div class="sn">02</div>
                     <div class="st">Compile to HTML</div>
                     <div class="sd">The compiler transforms your DSL into semantic HTML with data attributes. Works at
@@ -165,7 +165,7 @@
                         &lt;div<br>&nbsp;&nbsp;data-ani="fade-up"<br>&nbsp;&nbsp;data-ani-delay="200ms"<br>&gt;...&lt;/div&gt;
                     </div>
                 </div>
-                <div class="step" data-ani="fade-left">
+                <div class="step">
                     <div class="sn">03</div>
                     <div class="st">Runtime Triggers</div>
                     <div class="sd">The IntersectionObserver watches each element and fires the CSS animation the moment
@@ -179,10 +179,10 @@
     <!-- PLAYGROUND -->
     <section id="playground">
         <div class="si">
-            <div class="stag" data-ani="fade-down">// interactive</div>
-            <h2 class="stitle" data-ani="fade-up" data-ani-delay="100ms">Live Playground.</h2>
-            <p class="ssub" data-ani="fade-up" data-ani-delay="200ms">Type AniScript DSL on the left, see the live animation instantly on the right.</p>
-            <div class="pgwrap" data-ani="zoom-in-sm" data-ani-delay="300ms">
+            <div class="stag">// interactive</div>
+            <h2 class="stitle">Live Playground.</h2>
+            <p class="ssub">Type AniScript DSL on the left, see the live animation instantly on the right.</p>
+            <div class="pgwrap">
                 <div class="pgtop">
                     <div class="pgdots">
                         <div class="pgdot r"></div>
@@ -216,9 +216,9 @@
     <!-- GALLERY -->
     <section id="gallery">
         <div class="si">
-            <div class="stag" data-ani="fade-down">// 53 animations</div>
-            <h2 class="stitle" data-ani="fade-up" data-ani-delay="100ms">Every animation.<br>Ready to use.</h2>
-            <p class="ssub" data-ani="fade-up" data-ani-delay="200ms">Click any card to preview it. All GPU-accelerated, all accessible.</p>
+            <div class="stag">// 53 animations</div>
+            <h2 class="stitle">Every animation.<br>Ready to use.</h2>
+            <p class="ssub">Click any card to preview it. All GPU-accelerated, all accessible.</p>
             <div class="gfilters">
                 <button class="gfbtn active" data-filter="all">All</button>
                 <button class="gfbtn" data-filter="fade">Fades</button>
@@ -236,11 +236,11 @@
     <!-- INSTALL -->
     <section id="install">
         <div class="si">
-            <div class="stag" data-ani="fade-down">// get started</div>
-            <h2 class="stitle" data-ani="fade-up" data-ani-delay="100ms">Up in 60 seconds.</h2>
-            <p class="ssub" data-ani="fade-up" data-ani-delay="200ms">Two paths — pick what fits your project.</p>
-            <div class="igrid" data-ani-stagger="150">
-                <div class="icard" data-ani="fade-up">
+            <div class="stag">// get started</div>
+            <h2 class="stitle">Up in 60 seconds.</h2>
+            <p class="ssub">Two paths — pick what fits your project.</p>
+            <div class="igrid">
+                <div class="icard">
                     <div class="ictitle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
                             stroke-width="2">
                             <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -258,7 +258,7 @@
                         html;<br><br><span class="cc">// 3. Start the observer</span><br><span class="cf">init</span>();
                     </div>
                 </div>
-                <div class="icard" data-ani="fade-up">
+                <div class="icard">
                     <div class="ictitle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
                             stroke-width="2">
                             <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
@@ -284,10 +284,10 @@
     <!-- API -->
     <section id="api">
         <div class="si">
-            <div class="stag" data-ani="fade-down">// api reference</div>
-            <h2 class="stitle" data-ani="fade-up" data-ani-delay="100ms">Simple API.<br>Powerful results.</h2>
-            <p class="ssub" data-ani="fade-up" data-ani-delay="200ms">The full DSL parameter reference at a glance.</p>
-            <table class="atable" data-ani="fade-up" data-ani-delay="300ms">
+            <div class="stag">// api reference</div>
+            <h2 class="stitle">Simple API.<br>Powerful results.</h2>
+            <p class="ssub">The full DSL parameter reference at a glance.</p>
+            <table class="atable">
                 <thead>
                     <tr>
                         <th>Parameter</th>

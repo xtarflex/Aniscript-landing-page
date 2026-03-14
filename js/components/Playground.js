@@ -178,7 +178,7 @@ export function runPG() {
   .card p{margin:0;color:#64748b;font-size:.875rem}
   .tag{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:100px;margin-bottom:16px}
   ${allKeyframes()}
-  [data-ani]{animation-duration:.7s;animation-timing-function:cubic-bezier(.4,0,.2,1);animation-fill-mode:forwards}
+  [data-ani]{animation-duration:.7s;animation-timing-function:cubic-bezier(.4,0,.2,1);animation-fill-mode:both}
   [data-ani].ani-paused{opacity:0}
   [data-ani].ani-running{pointer-events:auto}
   ${allSelectors()}
