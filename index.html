@@ -176,6 +176,138 @@
         </div>
     </section>
 
+    <!-- USE CASES — drop this between #how and #playground -->
+    <section id="usecases">
+        <div class="si">
+            <div class="stag" data-ani="fade-down">// built for</div>
+            <h2 class="stitle" data-ani="fade-up" data-ani-delay="100ms">Stop writing animation code.<br>Start shipping.</h2>
+            <p class="ssub">AniScript was built for the developers who just want things to feel alive — without the
+                ceremony.</p>
+
+            <!-- BEFORE / AFTER -->
+            <div class="uc-compare" data-ani="fade-up" data-ani-delay="300ms">
+                <div class="uc-before">
+                    <div class="uc-label uc-label--bad">❌ Before — the painful way</div>
+                    <pre class="uc-code"><span class="uc-comment">// 3 npm installs. A license. 40 lines of config.</span>
+<span class="uc-keyword">import</span> { gsap } <span class="uc-keyword">from</span> <span class="uc-str">'gsap'</span>;
+<span class="uc-keyword">import</span> { ScrollTrigger } <span class="uc-keyword">from</span> <span class="uc-str">'gsap/ScrollTrigger'</span>;
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(<span class="uc-str">'.heading'</span>, {
+  scrollTrigger: {
+    trigger: <span class="uc-str">'.heading'</span>,
+    start: <span class="uc-str">'top 80%'</span>,
+  },
+  y: <span class="uc-num">40</span>,
+  opacity: <span class="uc-num">0</span>,
+  duration: <span class="uc-num">0.8</span>,
+  delay: <span class="uc-num">0.1</span>,
+});</pre>
+                </div>
+                <div class="uc-arrow">→</div>
+                <div class="uc-after">
+                    <div class="uc-label uc-label--good">✓ After — the AniScript way</div>
+                    <pre class="uc-code"><span class="uc-comment">// One line. Done.</span>
+
+
+
+<span class="uc-op">::</span> <span class="uc-an">fade-up</span> <span class="uc-pp">|</span> <span class="uc-dl">@100ms</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.8s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
+  <span class="uc-tx">&lt;h1&gt;Your heading&lt;/h1&gt;</span>
+<span class="uc-br">}</span></pre>
+                </div>
+            </div>
+
+            <!-- USE CASE CARDS -->
+            <div class="uc-grid">
+                <div class="uc-card" data-ani="fade-up" data-ani-delay="100ms">
+                    <div class="uc-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                        </svg>
+                    </div>
+                    <h3 class="uc-card-title">Blogs &amp; Articles</h3>
+                    <p class="uc-card-desc">Make your content feel premium. Headings fade in, images slide up, pull
+                        quotes bounce into view — all as the reader scrolls.</p>
+                    <div class="uc-tag">Content sites</div>
+                </div>
+
+                <div class="uc-card" data-ani="fade-up" data-ani-delay="200ms">
+                    <div class="uc-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3 class="uc-card-title">Documentation Sites</h3>
+                    <p class="uc-card-desc">Guide your readers through technical content. Stagger code blocks and
+                        callouts so each concept lands before the next appears.</p>
+                    <div class="uc-tag">Dev tools</div>
+                </div>
+
+                <div class="uc-card" data-ani="fade-up" data-ani-delay="300ms">
+                    <div class="uc-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3 class="uc-card-title">Portfolio Pages</h3>
+                    <p class="uc-card-desc">First impressions matter. Animate your work in with purpose — projects zoom
+                        in, skills fade up, your name hits like a statement.</p>
+                    <div class="uc-tag">Personal sites</div>
+                </div>
+
+                <div class="uc-card" data-ani="fade-up" data-ani-delay="400ms">
+                    <div class="uc-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h3 class="uc-card-title">Marketing Landing Pages</h3>
+                    <p class="uc-card-desc">Features stagger in. CTAs bounce. Testimonials slide. Build
+                        conversion-focused pages that feel hand-crafted without the hand-crafting.</p>
+                    <div class="uc-tag">Growth</div>
+                </div>
+
+                <div class="uc-card" data-ani="fade-up" data-ani-delay="500ms">
+                    <div class="uc-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="uc-card-title">Static Site Generators</h3>
+                    <p class="uc-card-desc">Works beautifully with Hugo, Jekyll, Eleventy, and Astro. No framework
+                        assumptions. Just drop it in and write DSL in your templates.</p>
+                    <div class="uc-tag">11ty · Hugo · Astro</div>
+                </div>
+
+                <div class="uc-card" data-ani="fade-up" data-ani-delay="600ms">
+                    <div class="uc-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="uc-card-title">CMS &amp; Comment Systems</h3>
+                    <p class="uc-card-desc">Let editors and readers write in .ani format directly in content fields. New
+                        comments and posts animate in automatically — no extra code.</p>
+                    <div class="uc-tag">Coming soon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PLAYGROUND -->
     <section id="playground">
         <div class="si">
