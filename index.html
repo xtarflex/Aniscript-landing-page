@@ -13,6 +13,18 @@
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Icons & Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="AniScript — The Animation DSL">
+    <meta property="og:description"
+        content="A declarative animation DSL. 53 hardware-accelerated animations. Zero dependencies.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://YOUR-SITE-URL.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
@@ -211,12 +223,20 @@ gsap.from(<span class="uc-str">'.heading'</span>, {
                 <div class="uc-after">
                     <div class="uc-label uc-label--good">✓ After — the AniScript way</div>
                     <pre class="uc-code"><span class="uc-comment">// One line. Done.</span>
-
-
-
 <span class="uc-op">::</span> <span class="uc-an">fade-up</span> <span class="uc-pp">|</span> <span class="uc-dl">@100ms</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.8s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
   <span class="uc-tx">&lt;h1&gt;Your heading&lt;/h1&gt;</span>
-<span class="uc-br">}</span></pre>
+<span class="uc-br">}</span>
+
+<span class="uc-comment">// Need an interaction? Just chain it.</span>
+<span class="uc-op">::</span> <span class="uc-an">hover:zoom-in</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.2s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
+  <span class="uc-tx">&lt;button&gt;Click me&lt;/button&gt;</span>
+<span class="uc-br">}</span>
+
+<span class="uc-comment">// Or stagger elements effortlessly</span>
+<span class="uc-num">[[ stagger: 150ms ]]</span>
+  <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;A&lt;/div&gt;</span> <span class="uc-br">}</span>
+  <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;B&lt;/div&gt;</span> <span class="uc-br">}</span>
+<span class="uc-num">[[/]]</span></pre>
                 </div>
             </div>
 

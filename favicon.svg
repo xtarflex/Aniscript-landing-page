@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="8" fill="#0f172a"/>
+  <defs>
+    <linearGradient id="fg" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#38bdf8;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="6" cy="10" r="1.6" fill="#38bdf8" opacity="0.5"/>
+  <circle cx="6" cy="14" r="1.6" fill="#38bdf8" opacity="0.5"/>
+  <path d="M9 11H16L15.2 8.5C15.2 8.1 15.7 7.9 16 8.1L20 10.7C20.3 10.9 20.3 11.3 20 11.5L16 14.1C15.7 14.3 15.2 14.1 15.2 13.7L16 11.3H9V11Z" fill="url(#fg)"/>
+  <circle cx="8" cy="19" r="1.6" fill="#38bdf8" opacity="0.5"/>
+  <circle cx="8" cy="23" r="1.6" fill="#38bdf8" opacity="0.5"/>
+  <path d="M11 20H18L17.2 17.5C17.2 17.1 17.7 16.9 18 17.1L22 19.7C22.3 19.9 22.3 20.3 22 20.5L18 23.1C17.7 23.3 17.2 23.1 17.2 22.7L18 20.3H11V20Z" fill="url(#fg)"/>
+  <path d="M26 6C27.5 6 28.5 7 28.5 9V23C28.5 25 27.5 26 26 26" stroke="rgba(248,250,252,0.5)" stroke-width="2" stroke-linecap="round"/>
+</svg>
