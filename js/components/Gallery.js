@@ -41,13 +41,6 @@ export function rGal() {
   if(!g) return;
   const list = cf === 'all' ? anis : anis.filter(a => a.c === cf);
   g.innerHTML = list.map(a => `<div class="acard" data-ani-name="${a.n}"><div class="aprev"></div><div class="aname">${a.n}</div></div>`).join('');
-
-  // Attach event listeners
-  g.querySelectorAll('.acard').forEach(card => {
-      card.addEventListener('click', function() {
-          prvAni(this.dataset.aniName, this);
-      });
-  });
 }
 
 /**
@@ -67,6 +60,16 @@ export function fGal(cat, btn) {
  */
 export function initGallery() {
     rGal();
+
+    const g = document.getElementById('ggrid');
+    if (g) {
+        g.addEventListener('click', (e) => {
+            const card = e.target.closest('.acard');
+            if (card) {
+                prvAni(card.dataset.aniName, card);
+            }
+        });
+    }
 
     document.querySelectorAll('.gfbtn').forEach(btn => {
         btn.addEventListener('click', function() {
