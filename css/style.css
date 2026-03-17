@@ -27,7 +27,13 @@
 @import './components/api.css';
 
 /* Fix Animation FOUC (Flash of Unstyled Content)
-   Hide all animated elements initially before JS observer processes them */
-[data-ani]:not(.ani-running) {
+   Hide all animated elements initially before JS observer processes them.
+   Excluded interaction-based animations (hover, click) which should be visible initially. */
+[data-ani]:not(.ani-running):not([data-ani^="hover:"]):not([data-ani^="click:"]) {
     opacity: 0;
+    pointer-events: none;
+}
+
+[data-ani].ani-running {
+    pointer-events: auto;
 }
