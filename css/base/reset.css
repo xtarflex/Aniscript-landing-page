@@ -1,16 +1,49 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-html, body {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
   font-family: var(--fb);
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
   max-width: 100vw;
 }
+
 body {
   line-height: 1.6;
 }
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-thumb { background: var(--sky); border-radius: 2px; }
 
-@media(prefers-reduced-motion:reduce){[data-ani]{animation-duration:.01ms!important;animation-delay:0ms!important}}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sky);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sky);
+}
+
+@media(prefers-reduced-motion:reduce) {
+  [data-ani] {
+    animation-duration: .01ms !important;
+    animation-delay: 0ms !important
+  }
+}
