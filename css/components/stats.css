@@ -11,6 +11,11 @@
 .slbl { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
 
 @media(max-width:768px){
-  .sstrip { flex-direction: column; gap: 8px; padding: 0 24px; }
-  .sitem { border-radius: 8px!important; border: 1px solid var(--border)!important; }
+  .sstrip { flex-direction: row; flex-wrap: wrap; gap: 8px; padding: 0 24px; justify-content: center; }
+  .sitem { flex: 1 1 calc(50% - 8px); border-radius: 8px!important; border: 1px solid var(--border)!important; }
+}
+
+@media(max-width:480px){
+  .sstrip { flex-direction: column; gap: 8px; }
+  .sitem { flex: 1 1 100%; border-radius: 8px!important; border: 1px solid var(--border)!important; }
 }

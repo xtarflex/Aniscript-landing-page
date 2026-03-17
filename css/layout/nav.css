@@ -16,6 +16,29 @@ nav {
 .ncta:hover { background: var(--sky2)!important; }
 
 @media(max-width:768px){
-  nav { padding: 0 20px; }
-  .nlinks { display: none; }
+  nav { padding: 0 20px; border-bottom: none; background: transparent; backdrop-filter: none; }
+  .nlogo { background: rgba(6,9,16,0.85); backdrop-filter: blur(16px); padding: 8px 16px; border-radius: 100px; border: 1px solid var(--border); margin-top: 10px; }
+  .nlinks {
+    display: flex;
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(6,9,16,0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 16px;
+    gap: 20px;
+    width: max-content;
+    max-width: 90%;
+    overflow-x: auto;
+    white-space: nowrap;
+    z-index: 1000;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .nlinks::-webkit-scrollbar { display: none; }
+  .nlinks a { padding: 8px 12px; font-size: 0.8rem; }
+  .ncta { padding: 8px 16px!important; }
 }

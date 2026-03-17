@@ -1,8 +1,9 @@
 /* GALLERY */
 #gallery { background: var(--bg2); }
-.gfilters { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0 32px; }
+.gfilters { display: flex; flex-wrap: nowrap; gap: 8px; margin: 40px 0 32px; overflow-x: auto; white-space: nowrap; -ms-overflow-style: none; scrollbar-width: none; }
+.gfilters::-webkit-scrollbar { display: none; }
 .gfbtn {
-  font-family: var(--fm); font-size: .72rem; padding: 6px 16px; border-radius: 100px;
+  font-family: var(--fm); font-size: .72rem; padding: 6px 16px; border-radius: 100px; flex-shrink: 0;
   border: 1px solid var(--border2); background: none; color: var(--muted); cursor: pointer; transition: all .15s;
 }
 .gfbtn.active, .gfbtn:hover { background: rgba(56,189,248,.1); border-color: var(--sky); color: var(--sky); }
