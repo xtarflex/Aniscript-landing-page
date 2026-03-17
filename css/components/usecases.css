@@ -9,6 +9,8 @@
 
 /* BEFORE / AFTER COMPARE */
 .uc-compare {
+    min-width: 0;
+    max-width: 100%;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
@@ -37,6 +39,7 @@
 }
 
 .uc-code {
+    max-width: 100%;
     font-family: var(--fm);
     font-size: .78rem;
     line-height: 1.9;
