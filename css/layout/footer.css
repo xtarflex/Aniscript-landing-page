@@ -1,12 +1,96 @@
 /* FOOTER */
-footer { border-top: 1px solid var(--border); padding: 48px 24px; }
-.fi { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.flogo { font-family: var(--fd); font-weight: 800; font-size: 1rem; color: var(--muted); }
-.flinks { display: flex; gap: 24px; list-style: none; }
-.flinks a { font-size: .82rem; color: var(--dim); text-decoration: none; transition: color .2s; }
-.flinks a:hover { color: var(--text); }
-.fcopy { font-size: .78rem; color: var(--dim); }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 24px;
+}
 
-@media(max-width:768px){
-  .fi { flex-direction: column; text-align: center; }
+.fi {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.fmain {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flogo {
+  font-family: var(--fd);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.fcopy {
+  font-size: .78rem;
+  color: var(--dim);
+}
+
+.flinks {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flinks a {
+  font-size: .82rem;
+  color: var(--dim);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.flinks a:hover {
+  color: var(--text);
+}
+
+.fshare {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fshare-lbl {
+  font-size: .82rem;
+  color: var(--dim);
+  margin-right: 4px;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--dim);
+  transition: all .2s ease;
+}
+
+.share-btn:hover {
+  color: var(--text);
+  border-color: var(--sky);
+  background: rgba(56, 189, 248, 0.05);
+  transform: translateY(-2px);
+}
+
+@media(max-width:768px) {
+  .fi {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .fmain {
+    align-items: center;
+  }
 }
