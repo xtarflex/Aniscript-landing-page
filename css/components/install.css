@@ -17,14 +17,25 @@
 }
 .cpybtn:hover { background: rgba(56,189,248,.1); color: var(--sky); }
 
+
 @media(max-width:768px){
   .igrid { grid-template-columns: 1fr; }
-}
-
-.icard {
-  min-width: 0;
-  max-width: 100%;
-}
-.cblock {
-  max-width: 100%;
+  .icard {
+    padding-right: 0;
+    margin-right: -24px;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .ictitle, .icsub {
+    padding-right: 32px;
+  }
+  .cblock {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .cpybtn {
+    right: 24px;
+  }
 }

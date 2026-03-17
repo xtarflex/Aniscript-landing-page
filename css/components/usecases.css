@@ -215,3 +215,28 @@
 .uc-code {
     max-width: 100%;
 }
+
+
+@media(max-width:768px) {
+  .uc-grid { grid-template-columns: 1fr; }
+  .uc-compare {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+    margin-right: -24px;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .uc-code {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .uc-label { padding-right: 32px; }
+  .uc-arrow { transform: rotate(90deg); text-align: center; }
+}
+@media(max-width:900px) and (min-width: 769px) {
+  .uc-grid { grid-template-columns: repeat(2, 1fr); }
+  .uc-compare { grid-template-columns: 1fr; }
+  .uc-arrow { transform: rotate(90deg); text-align: center; }
+}
