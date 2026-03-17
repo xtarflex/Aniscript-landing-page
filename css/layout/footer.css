@@ -84,6 +84,10 @@ footer {
 }
 
 @media(max-width:768px) {
+  footer {
+    padding-bottom: 120px;
+  }
+
   .fi {
     flex-direction: column;
     text-align: center;
@@ -92,5 +96,17 @@ footer {
 
   .fmain {
     align-items: center;
+  }
+
+  .flinks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 12px;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .flinks a {
+    font-size: 0.78rem;
   }
 }
