@@ -16,7 +16,8 @@
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
+  width: 100vw;
+  max-width: 900px;
   height: 600px;
   background: radial-gradient(ellipse at center, rgba(56, 189, 248, .13) 0%, rgba(129, 140, 248, .07) 40%, transparent 70%);
   pointer-events: none;
@@ -71,7 +72,7 @@
 .htitle {
   font-family: var(--fd);
   font-weight: 800;
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(2.5rem, 8vw, 6.5rem);
   line-height: .95;
   letter-spacing: -.04em;
   margin-bottom: 24px;
@@ -235,11 +236,13 @@
 }
 
 .dbody {
-  padding: 24px 28px;
+  padding: 24px;
   font-family: var(--fm);
   font-size: .82rem;
   line-height: 2;
   text-align: left;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .op {
