@@ -1,44 +1,167 @@
 /* NAV */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px; height: 64px;
-  background: rgba(6,9,16,0.85); backdrop-filter: blur(16px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(6, 9, 16, 0.85);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
-.nlogo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nlogo svg { width: 32px; height: 32px; }
-.nword { font-family: var(--fd); font-weight: 800; font-size: 1.1rem; color: var(--text); letter-spacing: -.02em; }
-.nlinks { display: flex; align-items: center; gap: 28px; list-style: none; }
-.nlinks a { font-size: .85rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
-.nlinks a:hover { color: var(--text); }
-.ncta { background: var(--sky)!important; color: #060910!important; padding: 7px 18px!important; border-radius: 6px; font-weight: 700!important; font-size: .82rem!important; }
-.ncta:hover { background: var(--sky2)!important; }
 
-@media(max-width:768px){
-  nav { padding: 0 20px; border-bottom: none; background: transparent; backdrop-filter: none; }
-  .nlogo { background: rgba(6,9,16,0.85); backdrop-filter: blur(16px); padding: 8px 16px; border-radius: 100px; border: 1px solid var(--border); margin-top: 10px; }
-  .nlinks {
-    display: flex;
+.nlogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nlogo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.nword {
+  font-family: var(--fd);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text);
+  letter-spacing: -.02em;
+}
+
+.nlinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nlinks a {
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.nlinks a:hover,
+.nlinks a.active {
+  color: var(--text);
+}
+
+.nlinks a.active {
+  color: var(--sky);
+}
+
+.ncta {
+  background: var(--sky) !important;
+  color: #060910 !important;
+  padding: 7px 18px !important;
+  border-radius: 6px;
+  font-weight: 700 !important;
+  font-size: .82rem !important;
+}
+
+.ncta:hover {
+  background: var(--sky2) !important;
+}
+
+@media(max-width:768px) {
+  nav {
+    padding: 0 20px;
+    border-bottom: none;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .nlogo {
+    background: rgba(6, 9, 16, 0.85);
+    backdrop-filter: blur(16px);
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    margin-top: 10px;
+  }
+
+  .nav-dock {
     position: fixed;
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(6,9,16,0.85);
+    background: rgba(6, 9, 16, 0.85);
     backdrop-filter: blur(16px);
     border: 1px solid var(--border);
     border-radius: 100px;
     padding: 8px 16px;
-    gap: 20px;
     width: max-content;
     max-width: 90%;
+    z-index: 1000;
+  }
+
+  .nav-dock::before,
+  .nav-dock::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  .nav-dock::before {
+    left: 8px;
+    background: linear-gradient(to right, rgba(6, 9, 16, 1) 0%, transparent 100%);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+
+  .nav-dock::after {
+    right: 8px;
+    background: linear-gradient(to left, rgba(6, 9, 16, 1) 0%, transparent 100%);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+
+  .nav-dock.scroll-left::before {
+    opacity: 1;
+  }
+
+  .nav-dock.scroll-right::after {
+    opacity: 1;
+  }
+
+  .nlinks {
+    display: flex;
+    position: relative;
+    gap: 20px;
     overflow-x: auto;
     white-space: nowrap;
-    z-index: 1000;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
-  .nlinks::-webkit-scrollbar { display: none; }
-  .nlinks a { padding: 8px 12px; font-size: 0.8rem; }
-  .ncta { padding: 8px 16px!important; }
+
+  .nlinks::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nlinks a {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    scroll-snap-align: center;
+  }
+
+  .ncta {
+    padding: 8px 16px !important;
+  }
 }

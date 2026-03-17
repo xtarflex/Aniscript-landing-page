@@ -23,22 +23,24 @@ body {
   line-height: 1.6;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--sky);
-  border-radius: 10px;
-}
+  ::-webkit-scrollbar-thumb {
+    background: var(--sky);
+    border-radius: 10px;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--sky);
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--sky);
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
