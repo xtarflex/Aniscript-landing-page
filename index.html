@@ -228,15 +228,13 @@
                     <span class="uc-tx">&lt;h1&gt;Your heading&lt;/h1&gt;</span>
                     <span class="uc-br">}</span>
 
-                    <span class="uc-comment">// Need an interaction? Just chain it.</span>
-                    <span class="uc-op">::</span> <span class="uc-an">hover:zoom-in</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.2s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
-                    <span class="uc-tx">&lt;button&gt;Click me&lt;/button&gt;</span>
-                    <span class="uc-br">}</span>
-
                     <span class="uc-comment">// Or stagger elements effortlessly</span>
                     <span class="uc-num">[[ stagger: 150ms ]]</span>
                     <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;A&lt;/div&gt;</span> <span class="uc-br">}</span>
                     <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;B&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;C&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;D&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;E&lt;/div&gt;</span> <span class="uc-br">}</span>
                     <span class="uc-num">[[/]]</span></pre>
                 </div>
             </div>
@@ -443,55 +441,56 @@
             <h2 class="stitle">Simple API.<br>Powerful results.</h2>
             <p class="ssub">The full DSL parameter reference at a glance.</p>
             <div class="table-responsive">
-            <table class="atable">
-                <thead>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>animation-name</code></td>
-                        <td class="ttype">string</td>
-                        <td class="tdef">required</td>
-                        <td class="tdesc">Any of the 53 built-in names. e.g. fade-up, zoom-in, bounce-left, shake-h</td>
-                    </tr>
-                    <tr>
-                        <td><code>tag</code></td>
-                        <td class="ttype">div | span</td>
-                        <td class="tdef">"div"</td>
-                        <td class="tdesc">The HTML wrapper element. Use span for inline content.</td>
-                    </tr>
-                    <tr>
-                        <td><code>@delay</code></td>
-                        <td class="ttype">time</td>
-                        <td class="tdef">"0ms"</td>
-                        <td class="tdesc">Delay before animation starts. e.g. @200ms, @0.5s</td>
-                    </tr>
-                    <tr>
-                        <td><code>dur:duration</code></td>
-                        <td class="ttype">time</td>
-                        <td class="tdef">"1s"</td>
-                        <td class="tdesc">Total animation duration. e.g. dur:800ms, dur:1.5s</td>
-                    </tr>
-                    <tr>
-                        <td><code>[[ stagger: t ]]</code></td>
-                        <td class="ttype">time</td>
-                        <td class="tdef">—</td>
-                        <td class="tdesc">Wraps children and applies cumulative delays. Close with [[/]]</td>
-                    </tr>
-                    <tr>
-                        <td><code>init(config)</code></td>
-                        <td class="ttype">object</td>
-                        <td class="tdef">{}</td>
-                        <td class="tdesc">threshold (0–1) and rootMargin for the IntersectionObserver.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <table class="atable">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>animation-name</code></td>
+                            <td class="ttype">string</td>
+                            <td class="tdef">required</td>
+                            <td class="tdesc">Any of the 53 built-in names. e.g. fade-up, zoom-in, bounce-left, shake-h
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>tag</code></td>
+                            <td class="ttype">div | span</td>
+                            <td class="tdef">"div"</td>
+                            <td class="tdesc">The HTML wrapper element. Use span for inline content.</td>
+                        </tr>
+                        <tr>
+                            <td><code>@delay</code></td>
+                            <td class="ttype">time</td>
+                            <td class="tdef">"0ms"</td>
+                            <td class="tdesc">Delay before animation starts. e.g. @200ms, @0.5s</td>
+                        </tr>
+                        <tr>
+                            <td><code>dur:duration</code></td>
+                            <td class="ttype">time</td>
+                            <td class="tdef">"1s"</td>
+                            <td class="tdesc">Total animation duration. e.g. dur:800ms, dur:1.5s</td>
+                        </tr>
+                        <tr>
+                            <td><code>[[ stagger: t ]]</code></td>
+                            <td class="ttype">time</td>
+                            <td class="tdef">—</td>
+                            <td class="tdesc">Wraps children and applies cumulative delays. Close with [[/]]</td>
+                        </tr>
+                        <tr>
+                            <td><code>init(config)</code></td>
+                            <td class="ttype">object</td>
+                            <td class="tdef">{}</td>
+                            <td class="tdesc">threshold (0–1) and rootMargin for the IntersectionObserver.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
