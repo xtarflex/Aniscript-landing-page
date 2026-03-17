@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <!-- Icons & Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="shortcut icon" href="./favicon.svg">
     <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 
     <!-- Open Graph for Social Sharing -->
@@ -203,40 +204,40 @@
                 <div class="uc-before">
                     <div class="uc-label uc-label--bad">❌ Before — the painful way</div>
                     <pre class="uc-code"><span class="uc-comment">// 3 npm installs. A license. 40 lines of config.</span>
-<span class="uc-keyword">import</span> { gsap } <span class="uc-keyword">from</span> <span class="uc-str">'gsap'</span>;
-<span class="uc-keyword">import</span> { ScrollTrigger } <span class="uc-keyword">from</span> <span class="uc-str">'gsap/ScrollTrigger'</span>;
+                    <span class="uc-keyword">import</span> { gsap } <span class="uc-keyword">from</span> <span class="uc-str">'gsap'</span>;
+                    <span class="uc-keyword">import</span> { ScrollTrigger } <span class="uc-keyword">from</span> <span class="uc-str">'gsap/ScrollTrigger'</span>;
 
-gsap.registerPlugin(ScrollTrigger);
+                    gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(<span class="uc-str">'.heading'</span>, {
-  scrollTrigger: {
-    trigger: <span class="uc-str">'.heading'</span>,
-    start: <span class="uc-str">'top 80%'</span>,
-  },
-  y: <span class="uc-num">40</span>,
-  opacity: <span class="uc-num">0</span>,
-  duration: <span class="uc-num">0.8</span>,
-  delay: <span class="uc-num">0.1</span>,
-});</pre>
+                    gsap.from(<span class="uc-str">'.heading'</span>, {
+                    scrollTrigger: {
+                        trigger: <span class="uc-str">'.heading'</span>,
+                        start: <span class="uc-str">'top 80%'</span>,
+                    },
+                    y: <span class="uc-num">40</span>,
+                    opacity: <span class="uc-num">0</span>,
+                    duration: <span class="uc-num">0.8</span>,
+                    delay: <span class="uc-num">0.1</span>,
+                    });</pre>
                 </div>
                 <div class="uc-arrow">→</div>
                 <div class="uc-after">
                     <div class="uc-label uc-label--good">✓ After — the AniScript way</div>
                     <pre class="uc-code"><span class="uc-comment">// One line. Done.</span>
-<span class="uc-op">::</span> <span class="uc-an">fade-up</span> <span class="uc-pp">|</span> <span class="uc-dl">@100ms</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.8s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
-  <span class="uc-tx">&lt;h1&gt;Your heading&lt;/h1&gt;</span>
-<span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-up</span> <span class="uc-pp">|</span> <span class="uc-dl">@100ms</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.8s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
+                    <span class="uc-tx">&lt;h1&gt;Your heading&lt;/h1&gt;</span>
+                    <span class="uc-br">}</span>
 
-<span class="uc-comment">// Need an interaction? Just chain it.</span>
-<span class="uc-op">::</span> <span class="uc-an">hover:zoom-in</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.2s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
-  <span class="uc-tx">&lt;button&gt;Click me&lt;/button&gt;</span>
-<span class="uc-br">}</span>
+                    <span class="uc-comment">// Need an interaction? Just chain it.</span>
+                    <span class="uc-op">::</span> <span class="uc-an">hover:zoom-in</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.2s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
+                    <span class="uc-tx">&lt;button&gt;Click me&lt;/button&gt;</span>
+                    <span class="uc-br">}</span>
 
-<span class="uc-comment">// Or stagger elements effortlessly</span>
-<span class="uc-num">[[ stagger: 150ms ]]</span>
-  <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;A&lt;/div&gt;</span> <span class="uc-br">}</span>
-  <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;B&lt;/div&gt;</span> <span class="uc-br">}</span>
-<span class="uc-num">[[/]]</span></pre>
+                    <span class="uc-comment">// Or stagger elements effortlessly</span>
+                    <span class="uc-num">[[ stagger: 150ms ]]</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;A&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;B&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-num">[[/]]</span></pre>
                 </div>
             </div>
 
