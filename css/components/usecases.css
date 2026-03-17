@@ -230,10 +230,19 @@
 
     .uc-compare {
         grid-template-columns: 1fr;
+        padding-right: 0;
+        margin-right: -24px;
+        width: calc(100% + 24px);
+        max-width: none;
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .uc-code {
-        border-radius: 10px;
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .uc-label {

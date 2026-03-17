@@ -102,11 +102,24 @@
   }
 
   .icard {
-    padding: 24px;
+    padding-right: 0;
+    margin-right: -24px;
+    width: calc(100% + 24px);
+    max-width: none;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .ictitle,
+  .icsub {
+    padding-right: 32px;
   }
 
   .cblock {
-    border-radius: 8px;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .cpybtn {
