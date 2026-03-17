@@ -11,3 +11,16 @@
 .ttype { font-family: var(--fm); font-size: .75rem; color: #a78bfa; }
 .tdef { font-family: var(--fm); font-size: .75rem; color: #34d399; }
 .tdesc { color: var(--muted); font-size: .82rem; }
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.atable {
+  max-width: 100%;
+}
+.atable th, .atable td {
+  word-break: break-word;
+}
