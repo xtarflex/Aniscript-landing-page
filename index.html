@@ -191,7 +191,7 @@
         </div>
     </section>
 
-    <!-- USE CASES — drop this between #how and #playground -->
+    <!-- USE CASES -->
     <section id="usecases">
         <div class="si">
             <div class="stag" data-ani="fade-down">// built for</div>
@@ -205,38 +205,38 @@
                 <div class="uc-before">
                     <div class="uc-label uc-label--bad">❌ Before — the painful way</div>
                     <pre class="uc-code"><span class="uc-comment">// 3 npm installs. A license. 40 lines of config.</span>
-<span class="uc-keyword">import</span> { gsap } <span class="uc-keyword">from</span> <span class="uc-str">'gsap'</span>;
-<span class="uc-keyword">import</span> { ScrollTrigger } <span class="uc-keyword">from</span> <span class="uc-str">'gsap/ScrollTrigger'</span>;
+                    <span class="uc-keyword">import</span> { gsap } <span class="uc-keyword">from</span> <span class="uc-str">'gsap'</span>;
+                    <span class="uc-keyword">import</span> { ScrollTrigger } <span class="uc-keyword">from</span> <span class="uc-str">'gsap/ScrollTrigger'</span>;
 
-gsap.registerPlugin(ScrollTrigger);
+                    gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(<span class="uc-str">'.heading'</span>, {
-scrollTrigger: {
-    trigger: <span class="uc-str">'.heading'</span>,
-    start: <span class="uc-str">'top 80%'</span>,
-},
-y: <span class="uc-num">40</span>,
-opacity: <span class="uc-num">0</span>,
-duration: <span class="uc-num">0.8</span>,
-delay: <span class="uc-num">0.1</span>,
-});</pre>
+                    gsap.from(<span class="uc-str">'.heading'</span>, {
+                    scrollTrigger: {
+                        trigger: <span class="uc-str">'.heading'</span>,
+                        start: <span class="uc-str">'top 80%'</span>,
+                    },
+                    y: <span class="uc-num">40</span>,
+                    opacity: <span class="uc-num">0</span>,
+                    duration: <span class="uc-num">0.8</span>,
+                    delay: <span class="uc-num">0.1</span>,
+                    });</pre>
                 </div>
                 <div class="uc-arrow">→</div>
                 <div class="uc-after">
                     <div class="uc-label uc-label--good">✓ After — the AniScript way</div>
                     <pre class="uc-code"><span class="uc-comment">// One line. Done.</span>
-<span class="uc-op">::</span> <span class="uc-an">fade-up</span> <span class="uc-pp">|</span> <span class="uc-dl">@100ms</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.8s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
-<span class="uc-tx">&lt;h1&gt;Your heading&lt;/h1&gt;</span>
-<span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-up</span> <span class="uc-pp">|</span> <span class="uc-dl">@100ms</span> <span class="uc-pp">|</span> <span class="uc-dr">dur:0.8s</span> <span class="uc-op">::</span> <span class="uc-br">{</span>
+                    <span class="uc-tx">&lt;h1&gt;Your heading&lt;/h1&gt;</span>
+                    <span class="uc-br">}</span>
 
-<span class="uc-comment">// Or stagger elements effortlessly</span>
-<span class="uc-num">[[ stagger: 150ms ]]</span>
-<span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;A&lt;/div&gt;</span> <span class="uc-br">}</span>
-<span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;B&lt;/div&gt;</span> <span class="uc-br">}</span>
-<span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;C&lt;/div&gt;</span> <span class="uc-br">}</span>
-<span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;D&lt;/div&gt;</span> <span class="uc-br">}</span>
-<span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;E&lt;/div&gt;</span> <span class="uc-br">}</span>
-<span class="uc-num">[[/]]</span></pre>
+                    <span class="uc-comment">// Or stagger elements effortlessly</span>
+                    <span class="uc-num">[[ stagger: 150ms ]]</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;A&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;B&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;C&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;D&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-op">::</span> <span class="uc-an">fade-left</span> <span class="uc-op">::</span> <span class="uc-br">{</span> <span class="uc-tx">&lt;div class="card"&gt;E&lt;/div&gt;</span> <span class="uc-br">}</span>
+                    <span class="uc-num">[[/]]</span></pre>
                 </div>
             </div>
 
@@ -304,14 +304,15 @@ delay: <span class="uc-num">0.1</span>,
                     <div class="uc-icon">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
                         </svg>
                     </div>
-                    <h3 class="uc-card-title">Static Site Generators</h3>
-                    <p class="uc-card-desc">Works beautifully with Hugo, Jekyll, Eleventy, and Astro. No framework
-                        assumptions. Just drop it in and write DSL in your templates.</p>
-                    <div class="uc-tag">11ty · Hugo · Astro</div>
+                    <h3 class="uc-card-title">Modern Frameworks</h3>
+                    <p class="uc-card-desc">Integrates cleanly with React, Vue, Svelte, and Solid. Pass your DSL strings
+                        through the compiler and inject the semantic HTML directly into your components.</p>
+                    <div class="uc-tag">React · Vue · Svelte</div>
                 </div>
 
                 <div class="uc-card" data-ani="fade-up" data-ani-delay="600ms">
@@ -319,12 +320,13 @@ delay: <span class="uc-num">0.1</span>,
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.8">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            <path d="M12 4v8M8 8h8" />
                         </svg>
                     </div>
-                    <h3 class="uc-card-title">CMS &amp; Comment Systems</h3>
-                    <p class="uc-card-desc">Let editors and readers write in .ani format directly in content fields. New
-                        comments and posts animate in automatically — no extra code.</p>
-                    <div class="uc-tag">Coming soon</div>
+                    <h3 class="uc-card-title">Dynamic Content</h3>
+                    <p class="uc-card-desc">Perfect for SPAs and data-heavy apps. Fetch your content, compile the DSL on
+                        the fly, and securely render it. New elements animate in effortlessly.</p>
+                    <div class="uc-tag">Single Page Apps</div>
                 </div>
             </div>
         </div>
