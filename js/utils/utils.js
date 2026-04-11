@@ -39,3 +39,23 @@ export function initUrlCopier() {
     });
   });
 }
+
+/**
+ * Throttles a function using requestAnimationFrame.
+ * This is useful for performance-heavy tasks like scroll and resize event handlers.
+ *
+ * @param {Function} fn - The function to throttle.
+ * @returns {Function} - The throttled function.
+ */
+export function rafThrottle(fn) {
+    let ticking = false;
+    return (...args) => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                fn(...args);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+}
