@@ -105,6 +105,35 @@ export function runPG() {
  * Initializes the playground component, adding necessary event listeners.
  */
 export function initPlayground() {
+  const toggleBtn = document.getElementById("pg_toggle_btn");
+  const copyBtn = document.getElementById("pg_copy_btn");
+  const pgp = document.getElementById("pgp");
+  const pgo = document.getElementById("pgo");
+  if (toggleBtn && pgp && pgo) {
+    toggleBtn.addEventListener("click", () => {
+      if (pgo.style.display === "none") {
+        pgo.style.display = "block";
+        pgp.style.display = "none";
+        toggleBtn.textContent = "Show Preview";
+        if (copyBtn) copyBtn.style.display = "inline-block";
+      } else {
+        pgo.style.display = "none";
+        pgp.style.display = "block";
+        toggleBtn.textContent = "Show HTML";
+        if (copyBtn) copyBtn.style.display = "none";
+      }
+    });
+  }
+  if (copyBtn && pgo) {
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(pgo.value).then(() => {
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => copyBtn.textContent = originalText, 2000);
+      });
+    });
+  }
+
   const pgrun = document.querySelector('.pgrun');
   if (pgrun) {
     pgrun.addEventListener('click', runPG);

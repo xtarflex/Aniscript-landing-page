@@ -315,8 +315,7 @@ delay: <span class="uc-num">0.1</span>,
                         </svg>
                     </div>
                     <h3 class="uc-card-title">Modern Frameworks</h3>
-                    <p class="uc-card-desc">Integrates cleanly with React, Vue, Svelte, and Solid. Pass your DSL strings
-                        through the compiler and inject the semantic HTML directly into your components.<br><br><strong>React:</strong> call <code>init()</code> in <code>useEffect()</code>.<br><strong>Vue:</strong> call <code>init()</code> in <code>onMounted()</code>.<br><strong>Svelte:</strong> call <code>init()</code> in <code>onMount()</code>.<br><strong>Next.js/Nuxt:</strong> Use a <code>typeof window !== 'undefined'</code> guard for SSR.</p>
+                    <p class="uc-card-desc">Integrates cleanly with React, Vue, Svelte, and Solid. Pass your DSL strings through the compiler and inject the HTML directly into your components.</p>
                     <div class="uc-tag">React · Vue · Svelte</div>
                 </div>
 
@@ -448,6 +447,21 @@ delay: <span class="uc-num">0.1</span>,
                             }`</span>);<br>&nbsp;<span class="cf">init</span>();<br>&lt;/<span
                             class="cf">script</span>&gt;</div>
                 </div>
+                <div class="icard" style="grid-column: 1 / -1; margin-top: 20px;">
+                    <div class="ictitle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
+                            stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>Framework Integration Guides</div>
+                    <div class="icsub">How to initialize AniScript correctly in modern reactive frameworks.</div>
+                    <div class="cblock" style="font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: #94a3b8; line-height: 1.6;">
+                        <strong style="color: #e2e8f0;">React:</strong> Call <code>init()</code> inside a <code>useEffect()</code> hook to ensure the DOM is ready.<br><br>
+                        <strong style="color: #e2e8f0;">Vue:</strong> Call <code>init()</code> inside the <code>onMounted()</code> lifecycle hook.<br><br>
+                        <strong style="color: #e2e8f0;">Svelte:</strong> Call <code>init()</code> inside the <code>onMount()</code> function.<br><br>
+                        <strong style="color: #e2e8f0;">Next.js / Nuxt (SSR):</strong> Wrap your initialization in a <code>if (typeof window !== 'undefined')</code> guard to prevent server-side execution errors.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -478,7 +492,7 @@ delay: <span class="uc-num">0.1</span>,
                         </tr>
                         <tr>
                             <td><code>tag</code></td>
-                            <td class="ttype">div | span</td>
+                            <td class="ttype">div &#124; span</td>
                             <td class="tdef">"div"</td>
                             <td class="tdesc">The HTML wrapper element. Use span for inline content.</td>
                         </tr>
