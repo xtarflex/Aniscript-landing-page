@@ -3,6 +3,8 @@
  * @description Logic for the navigation bar, including the mobile dock scroll indicator and active section scroll-spy.
  */
 
+import { rafThrottle } from '../utils/utils.js';
+
 export function initNavDock() {
     // Mobile Nav Dock Scroll Indicator & Active Section Logic
     const navDock = document.querySelector('.nav-dock');
@@ -24,8 +26,10 @@ export function initNavDock() {
             }
         };
 
-        nlinks.addEventListener('scroll', updateScrollAuth, { passive: true });
-        window.addEventListener('resize', updateScrollAuth, { passive: true });
+        const throttledUpdateScrollAuth = rafThrottle(updateScrollAuth);
+
+        nlinks.addEventListener('scroll', throttledUpdateScrollAuth, { passive: true });
+        window.addEventListener('resize', throttledUpdateScrollAuth, { passive: true });
         // Delay initial check to ensure layout is complete
         setTimeout(updateScrollAuth, 100);
 
