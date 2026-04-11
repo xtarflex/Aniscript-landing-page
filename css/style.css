@@ -33,7 +33,9 @@
 [data-ani]:not(.ani-running):not([data-ani^="hover:"]):not([data-ani^="click:"]) {
     opacity: 0;
     pointer-events: none;
+    will-change: transform, opacity;
 }
+[data-ani^="blur-"]:not(.ani-running):not([data-ani^="hover:"]):not([data-ani^="click:"]) { will-change: transform, opacity, filter; }
 
 [data-ani].ani-running {
     pointer-events: auto;

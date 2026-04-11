@@ -86,7 +86,7 @@
     <section id="hero">
         <div class="hglow"></div>
         <div class="hgrid"></div>
-        <div class="hbadge"><span class="bdot"></span>v1.1.4 — Now on npm</div>
+        <div class="hbadge"><span class="bdot"></span>v1.1.5 — Now on npm</div>
         <h1 class="htitle">
             <span class="l1">Animate anything.</span>
             <span class="l2">Write almost nothing.</span>
@@ -316,7 +316,7 @@ delay: <span class="uc-num">0.1</span>,
                     </div>
                     <h3 class="uc-card-title">Modern Frameworks</h3>
                     <p class="uc-card-desc">Integrates cleanly with React, Vue, Svelte, and Solid. Pass your DSL strings
-                        through the compiler and inject the semantic HTML directly into your components.</p>
+                        through the compiler and inject the semantic HTML directly into your components.<br><br><strong>React:</strong> call <code>init()</code> in <code>useEffect()</code>.<br><strong>Vue:</strong> call <code>init()</code> in <code>onMounted()</code>.<br><strong>Svelte:</strong> call <code>init()</code> in <code>onMount()</code>.<br><strong>Next.js/Nuxt:</strong> Use a <code>typeof window !== 'undefined'</code> guard for SSR.</p>
                     <div class="uc-tag">React · Vue · Svelte</div>
                 </div>
 
@@ -368,7 +368,15 @@ delay: <span class="uc-num">0.1</span>,
                             spellcheck="false"></textarea>
                     </div>
                     <div class="pgpane">
-                        <div class="pglbl">Live Preview</div><iframe id="pgp" class="pgprev" frameborder="0"></iframe>
+                        <div class="pglbl" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                            <span>Live Preview</span>
+                            <div style="display: flex; gap: 8px;">
+                                <button id="pg_toggle_btn" style="background: none; border: 1px solid var(--border); color: var(--text-muted); font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; cursor: pointer;">Show HTML</button>
+                                <button id="pg_copy_btn" style="display: none; background: none; border: 1px solid var(--border); color: var(--text-muted); font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; cursor: pointer;">Copy Output</button>
+                            </div>
+                        </div>
+                        <iframe id="pgp" class="pgprev" frameborder="0" style="flex: 1; min-height: 0;"></iframe>
+                        <textarea id="pgo" class="pged" spellcheck="false" readonly style="display: none; background: #1e1e1e; color: #d4d4d4; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; padding: 16px; border: none; resize: none; width: 100%; height: 100%; box-sizing: border-box;"></textarea>
                     </div>
                 </div>
             </div>
@@ -380,7 +388,7 @@ delay: <span class="uc-num">0.1</span>,
         <div class="si">
             <div class="stag" data-ani="fade-down">// 53 animations</div>
             <h2 class="stitle" data-ani="fade-up" data-ani-delay="100ms">Every animation.<br>Ready to use.</h2>
-            <p class="ssub" data-ani="fade-up" data-ani-delay="200ms">Click any card to preview it. All GPU-accelerated,
+            <p class="ssub" data-ani="fade-up" data-ani-delay="200ms">Hover over any card to preview it. All GPU-accelerated,
                 all accessible.</p>
             <div class="gfilters" data-ani="fade-up" data-ani-delay="300ms">
                 <button class="gfbtn active" data-filter="all">All</button>
@@ -390,7 +398,7 @@ delay: <span class="uc-num">0.1</span>,
                 <button class="gfbtn" data-filter="bounce">Bounces</button>
                 <button class="gfbtn" data-filter="blur">Blur</button>
                 <button class="gfbtn" data-filter="attention">Attention</button>
-                <button class="gfbtn" data-filter="flip">Flips</button>
+                <button class="gfbtn" data-filter="flip">Flips & Rotations</button>
             </div>
             <div class="ggrid" id="ggrid"></div>
         </div>
@@ -417,7 +425,7 @@ delay: <span class="uc-num">0.1</span>,
                             class="cs">'aniscript/dist/aniscript.css'</span>;<br><br><span class="cc">// 2. Compile
                             &amp; inject</span><br><span class="ck">const</span> html = <span
                             class="cf">compile</span>(<span class="cs">':: fade-up :: { Hello
-                            }'</span>);<br>document.querySelector(<span class="cs">'#app'</span>).innerHTML =
+                            }`</span>);<br>document.querySelector(<span class="cs">'#app'</span>).innerHTML =
                         html;<br><br><span class="cc">// 3. Start the observer</span><br><span class="cf">init</span>();
                     </div>
                 </div>
@@ -436,8 +444,8 @@ delay: <span class="uc-num">0.1</span>,
                         type=<span class="cs">"module"</span>&gt;<br>&nbsp;<span class="ci">import</span> { compile,
                         init }<br>&nbsp;&nbsp;<span class="ci">from</span> <span
                             class="cs">'https://unpkg.com/aniscript/src/index.js'</span>;<br>&nbsp;document.body.innerHTML
-                        +=<br>&nbsp;&nbsp;<span class="cf">compile</span>(<span class="cs">':: bounce-in :: { Hello!
-                            }'</span>);<br>&nbsp;<span class="cf">init</span>();<br>&lt;/<span
+                        +=<br>&nbsp;&nbsp;<span class="cf">compile</span>(<span class="cs">`:: bounce-in :: { Hello!
+                            }`</span>);<br>&nbsp;<span class="cf">init</span>();<br>&lt;/<span
                             class="cf">script</span>&gt;</div>
                 </div>
             </div>
@@ -497,6 +505,18 @@ delay: <span class="uc-num">0.1</span>,
                             <td class="ttype">object</td>
                             <td class="tdef">{}</td>
                             <td class="tdesc">threshold (0–1) and rootMargin for the IntersectionObserver.</td>
+                        </tr>
+                        <tr>
+                            <td><code>threshold</code></td>
+                            <td class="ttype">number</td>
+                            <td class="tdef">0.1</td>
+                            <td class="tdesc">IntersectionObserver threshold.</td>
+                        </tr>
+                        <tr>
+                            <td><code>rootMargin</code></td>
+                            <td class="ttype">string</td>
+                            <td class="tdef">'0px'</td>
+                            <td class="tdesc">IntersectionObserver rootMargin.</td>
                         </tr>
                     </tbody>
                 </table>

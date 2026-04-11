@@ -35,11 +35,18 @@ export function loadEx(k) {
 export function runPG() {
   const iframe = document.getElementById('pgp');
   const pgi = document.getElementById('pgi');
-  if (!iframe || !pgi) return;
+  const pgo = document.getElementById('pgo');
+  if (!iframe || !pgi || !pgo) return;
 
   const inputVal = pgi.value;
-  // Use the installed aniscript package to compile
+
+  // update URL with query param
+  const url = new URL(window.location.href);
+  url.searchParams.set('dsl', encodeURIComponent(inputVal));
+  window.history.replaceState({}, '', url);
+
   const compiled = compile(inputVal);
+  pgo.value = compiled;
 
   const doc = iframe.contentDocument || iframe.contentWindow.document;
   doc.open();
