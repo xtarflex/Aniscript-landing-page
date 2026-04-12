@@ -24,10 +24,10 @@
 .pgpane:last-child { border-right: none; display: flex; flex-direction: column; }
 .pglbl {
   font-family: var(--fm); font-size: .65rem; text-transform: uppercase; letter-spacing: .1em;
-  color: var(--dim); padding: 8px 16px; border-bottom: 1px solid var(--border); background: rgba(0,0,0,.15);
+  color: var(--dim); padding: 8px 16px; border-bottom: 1px solid var(--border); background: rgba(0,0,0,.15); flex-shrink: 0;
 }
 .pged {
-  width: 100%; height: 100%; min-height: 380px; background: #090e1a; border: none; outline: none;
+  width: 100%; flex: 1; height: 100%; min-height: 380px; background: #090e1a; border: none; outline: none;
   resize: none; font-family: var(--fm); font-size: .8rem; color: #c8d3f5; padding: 20px; line-height: 1.8;
 }
 .pgprev { background: #f8fafc; overflow: auto; min-height: 380px; width: 100%; border: none; display: block; }
@@ -55,6 +55,8 @@
   resize: none;
   width: 100%;
   flex: 1;
+  height: 100%;
+  min-height: 380px;
   box-sizing: border-box;
 }
 #pgp {
