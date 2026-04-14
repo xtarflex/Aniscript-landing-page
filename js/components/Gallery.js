@@ -49,7 +49,7 @@ export function initGallery() {
 
     const g = document.getElementById('ggrid');
     if (g) {
-        g.addEventListener('click', (e) => {
+        g.addEventListener('mouseover', (e) => {
             const card = e.target.closest('.acard');
             if (card) {
                 prvAni(card.dataset.aniName, card);

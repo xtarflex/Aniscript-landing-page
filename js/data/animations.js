@@ -13,7 +13,7 @@ export const anis = [
   {n:'slide-in-up',c:'slide'},{n:'slide-in-down',c:'slide'},{n:'slide-in-left',c:'slide'},{n:'slide-in-right',c:'slide'},
   {n:'bounce-in',c:'bounce'},{n:'bounce-up',c:'bounce'},{n:'bounce-down',c:'bounce'},{n:'bounce-left',c:'bounce'},{n:'bounce-right',c:'bounce'},
   {n:'slide-bounce-up',c:'bounce'},{n:'slide-bounce-down',c:'bounce'},{n:'slide-bounce-left',c:'bounce'},{n:'slide-bounce-right',c:'bounce'},
-  {n:'blur-in',c:'blur'},{n:'blur-in-sm',c:'blur'},{n:'blur-in-lg',c:'blur'},{n:'blur-out',c:'blur'},
+  {n:'blur-in',c:'blur'},{n:'blur-in-sm',c:'blur'},{n:'blur-in-lg',c:'blur'},
   {n:'shake-h',c:'attention'},{n:'shake-v',c:'attention'},{n:'pulse',c:'attention'},{n:'swing',c:'attention'},
   {n:'jello',c:'attention'},{n:'wobble',c:'attention'},{n:'rubber-band',c:'attention'},
   {n:'flip-x',c:'flip'},{n:'flip-y',c:'flip'},{n:'rotate-in-cw',c:'flip'},{n:'rotate-in-ccw',c:'flip'},{n:'rotate-up',c:'flip'},{n:'rotate-down',c:'flip'},
