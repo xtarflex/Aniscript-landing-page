@@ -69,9 +69,16 @@ export function runPG() {
 </style></head><body>${compiled}</body></html>`);
   doc.close();
 
-  // run observer inside iframe
+  initIframeObserver(iframe);
+}
+
+/**
+ * Initializes the intersection observer and animation states for elements within the playground iframe.
+ * @param {HTMLIFrameElement} iframe - The playground iframe element.
+ */
+function initIframeObserver(iframe) {
   const w = iframe.contentWindow;
-  let obs = new w.IntersectionObserver((entries, o) => {
+  const obs = new w.IntersectionObserver((entries, o) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.remove('ani-paused');
