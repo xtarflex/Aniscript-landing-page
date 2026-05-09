@@ -4,6 +4,7 @@
  */
 import { compile } from 'aniscript';
 import aniStyles from '../../css/components/aniscript_keyframes.css?raw';
+import { debounce } from '../utils/utils.js';
 
 const exs = {
   hero: `:: fade-down | @100ms | dur:0.8s :: {\n  <h2>Experience Motion</h2>\n}\n:: fade-up | @400ms :: {\n  <p>A declarative DSL for modern web animations.</p>\n}\n:: zoom-in-sm | @700ms :: {\n  <button>Get Started Free</button>\n}`,
@@ -140,7 +141,7 @@ export function initPlayground() {
   }
   const pgi = document.getElementById('pgi');
   if (pgi) {
-    pgi.addEventListener('input', runPG);
+    pgi.addEventListener('input', debounce(runPG, 250));
   }
 
   // Attach event listeners to tabs
