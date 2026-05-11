@@ -8,6 +8,13 @@
 }
 
 /* BEFORE / AFTER COMPARE */
+/* Fix for grid item minimum width preventing overflow-x scroll inside code block */
+.uc-before,
+.uc-after {
+    min-width: 0;
+    max-width: 100%;
+}
+
 .uc-compare {
     min-width: 0;
     max-width: 100%;
@@ -210,18 +217,6 @@
         grid-template-columns: 1fr;
     }
 }
-
-/* Fix for grid item minimum width preventing overflow-x scroll inside code block */
-.uc-before,
-.uc-after {
-    min-width: 0;
-    max-width: 100%;
-}
-
-.uc-code {
-    max-width: 100%;
-}
-
 
 @media(max-width:768px) {
     .uc-grid {

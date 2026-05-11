@@ -20,7 +20,11 @@
 }
 .pgrun:hover { background: var(--sky2); }
 .pgbody { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; height: 500px; }
-.pgpane { border-right: 1px solid var(--border); display: flex; flex-direction: column; }
+.pgpane {
+  min-width: 0;
+  max-width: 100%;
+  border-right: 1px solid var(--border); display: flex; flex-direction: column;
+}
 .pgpane:last-child { border-right: none; display: flex; flex-direction: column; }
 .pglbl {
   font-family: var(--fm); font-size: .65rem; text-transform: uppercase; letter-spacing: .1em;
